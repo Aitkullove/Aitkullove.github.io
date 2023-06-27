@@ -1,0 +1,12 @@
+$calculator_color_realistic: rgb(25, 25, 25);
+
+$buttons_color_realistic_default: rgb(166, 166, 166);
+$buttons_text_color: rgb(221, 221, 221);
+$buttons_color_realistic_darken: darken($buttons_color_realistic_default, 20);
+$buttons_color_realistic_service: rgb(189, 43, 43);
+$buttons_size: 50px;
+
+@mixin reset_indents {
+  margin: 0;
+  padding: 0;
+}

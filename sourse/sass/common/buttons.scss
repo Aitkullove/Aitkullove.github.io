@@ -1,0 +1,172 @@
+.buttons {
+	display: flex;
+  justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.button {
+  position: relative;
+
+  width: $buttons_size;
+  height: $buttons_size;
+
+  border: 2px solid #000;
+
+  cursor: pointer;
+
+  &--result {
+    flex-grow: 1;
+  }
+}
+
+.buttons__block {
+	display: flex;
+	flex-wrap: wrap;
+
+	&--service {
+		justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 15px;
+
+    & .button {
+      margin-right: 10px;
+		}
+
+		& .button:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&--numbers {
+		width: 170px;
+    box-sizing: border-box;
+
+		& .button {
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      font-size: 25px;
+      line-height: 30px;
+      font-weight: 700
+		}
+
+    & .button:nth-child(3n),
+    & .button:last-child {
+			margin-right: 0;
+    }
+
+    & .button:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--math {
+    display: flex;
+		justify-content: flex-end;
+		margin-left: auto;
+	}
+
+  &--signs,
+  &--operations {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50px;
+    margin-left: auto;
+
+    & .button {
+      margin-bottom: 10px;
+    }
+
+    & .button:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--operations {
+		margin-left: 10px;
+	}
+}
+
+.calculator--realistic .buttons__block {
+  & svg {
+    fill: $buttons_text_color;
+  }
+
+  & .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $buttons_text_color;
+
+    border-radius: 5px;
+
+    &:hover,
+    &:hover svg,
+    &:focus,
+    &:focus svg {
+      color: lighten($buttons_text_color, 20);
+
+      fill: lighten($buttons_text_color, 20);
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 3px;
+      left: 3px;
+
+      display: block;
+      width: ($buttons_size - 10);
+      height: ($buttons_size - 10);
+
+      border-radius: 5px;
+    }
+
+    &--default {
+      background-color: $buttons_color_realistic_default;
+      background: linear-gradient(135deg, lighten($buttons_color_realistic_default, 20) 0%, darken($buttons_color_realistic_default, 20) 100%);
+
+      &::before {
+        background-color: $buttons_color_realistic_default;
+        background: linear-gradient(-45deg, $buttons_color_realistic_default 0%, darken($buttons_color_realistic_default, 10) 100%);
+      }
+    }
+
+    &--darken {
+      background-color: $buttons_color_realistic_darken;
+      background: linear-gradient(135deg, lighten($buttons_color_realistic_darken, 20) 0%, darken($buttons_color_realistic_darken, 20) 100%);
+
+      &::before {
+        background-color: $buttons_color_realistic_default;
+        background: linear-gradient(-45deg, $buttons_color_realistic_darken 0%, darken($buttons_color_realistic_darken, 10) 100%);
+      }
+    }
+
+    &--service {
+      background-color: $buttons_color_realistic_service;
+      background: linear-gradient(135deg, lighten($buttons_color_realistic_service, 20) 0%, darken($buttons_color_realistic_service, 20) 100%);
+
+      &::before {
+        background-color: $buttons_color_realistic_service;
+        background: linear-gradient(-45deg, $buttons_color_realistic_service 0%, darken($buttons_color_realistic_service, 10) 100%);
+      }
+    }
+
+    &--result::before {
+      width: calc(100% - 6px);
+    }
+
+    & .button__icon,
+    & .button__number {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

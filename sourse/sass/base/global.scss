@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+}
+
+body {
+  @include reset_indents;
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+	color: #323232;
+
+	background-color: #c1c1e9;
+  background-image: linear-gradient(to top, #c1c1e9 0%, #7c9ec0 100%);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  color: rgb(133, 95, 7);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
