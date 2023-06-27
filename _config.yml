@@ -1,4 +1,0 @@
-exclude: 
-- "./README.markdown"
-- "./README-FULL.markdown"
-- "./README-TESTING.markdown"
